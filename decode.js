@@ -3,7 +3,8 @@ var debug = false;
 var AVG_SAMPLES_PER_LINE = 734;
 var leftChannel = {
   go: true,
-  offset: 1200000,
+  offset: 1300000,
+  // offset: 1200000,
   samples: null,
   haltOnError: false,
   canvasName: "imgCanvasLeft",
@@ -11,7 +12,7 @@ var leftChannel = {
 };
 var rightChannel = {
   go: true,
-  offset: 1200000,
+  offset: 1300000,
   samples: null,
   haltOnError: false,
   canvasName: "imgCanvasRight",
@@ -23,6 +24,7 @@ function updateOscilloscope(channel, scanlineLength, marker0, marker1) {
   var c = document.getElementById(channel.plotName);
   var buffer = channel.samples;
   var offset = channel.offset;
+  console.log(111, offset)
   var ctx = c.getContext("2d");
   var zoom = 200;
   var W = c.width;
@@ -213,7 +215,7 @@ function pauseAudio() {
 
 function initAudio() {
   let audio = document.getElementById('load-audio');
-  audio.currentTime = 13;
+  audio.currentTime = 38;
 }
 
 
